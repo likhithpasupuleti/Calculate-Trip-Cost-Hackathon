@@ -13,7 +13,7 @@ public class ExtentReportManager
 	{
 		if(report==null)
 		{
-			htmlReporter=new ExtentSparkReporter(System.getProperty("user.dir")+"\\test-output\\Extent_"+TimeStamp.date()+".html");
+			htmlReporter=new ExtentSparkReporter(System.getProperty("user.dir")+"\\test-output\\Extent_Report_"+TimeStamp.date()+".html");
 			report=new ExtentReports();
 			report.attachReporter(htmlReporter);
 			
