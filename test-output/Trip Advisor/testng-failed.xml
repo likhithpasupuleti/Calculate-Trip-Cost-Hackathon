@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Trip Advisor]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test2(failed)">
+    <groups>
+      <run>
+        <include name="Smoke Test"/>
+        <include name="Regression Test"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="testclass.TestCase2">
+        <methods>
+          <include name="clickOnHolidayHomesNameLinksTest"/>
+          <include name="quit"/>
+        </methods>
+      </class> <!-- testclass.TestCase2 -->
+    </classes>
+  </test> <!-- Test2(failed) -->
+</suite> <!-- Failed suite [Trip Advisor] -->

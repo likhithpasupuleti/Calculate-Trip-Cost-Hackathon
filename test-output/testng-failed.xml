@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Regression Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="browser" value="chrome"/>
+  <test thread-count="5" name="Landing Page(failed)">
+    <groups>
+      <run>
+        <include name="Smoke Test"/>
+        <include name="Regression Test"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.calculatetripcost.testcases.LandingPageTest">
+        <methods>
+          <include name="quit"/>
+          <include name="openBrowser"/>
+          <include name="check_url"/>
+        </methods>
+      </class> <!-- com.calculatetripcost.testcases.LandingPageTest -->
+    </classes>
+  </test> <!-- Landing Page(failed) -->
+  <test thread-count="5" name="Nairobi Search Results Page(failed)">
+    <groups>
+      <run>
+        <include name="Smoke Test"/>
+        <include name="Regression Test"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.calculatetripcost.testcases.NairobiSearchResultsPageTest">
+        <methods>
+          <include name="openBrowser"/>
+          <include name="quit"/>
+          <include name="check_url"/>
+        </methods>
+      </class> <!-- com.calculatetripcost.testcases.NairobiSearchResultsPageTest -->
+    </classes>
+  </test> <!-- Nairobi Search Results Page(failed) -->
+  <test thread-count="5" name="Cruises Page Test(failed)">
+    <groups>
+      <run>
+        <include name="Smoke Test"/>
+        <include name="Regression Test"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.calculatetripcost.testcases.CruisesPageTestAndDeckPageTest">
+        <methods>
+          <include name="check_url"/>
+          <include name="openBrowser"/>
+          <include name="quit"/>
+        </methods>
+      </class> <!-- com.calculatetripcost.testcases.CruisesPageTestAndDeckPageTest -->
+    </classes>
+  </test> <!-- Cruises Page Test(failed) -->
+</suite> <!-- Failed suite [Regression Suite] -->

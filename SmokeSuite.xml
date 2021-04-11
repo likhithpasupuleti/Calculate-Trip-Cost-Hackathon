@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Smoke Suite">
+	<test thread-count="5" name="Landing Page">
+		<groups>
+			<run>
+				<include name="Smoke Test"/>
+			</run>
+		</groups>
+		<classes>
+			<class name="com.calculatetripcost.testcases.LandingPageTest" />
+		</classes>
+	</test> <!-- Test -->
+	<test thread-count="5" name="Nairobi Search Results Page">
+
+		<groups>
+			<run>
+				<include name="Smoke Test"/>
+			</run>
+		</groups>
+		<classes>
+			<class name="com.calculatetripcost.testcases.NairobiSearchResultsPageTest" />
+		</classes>
+	</test> <!-- Test -->
+	<test thread-count="5" name="Cruises Page Test">
+
+		<groups>
+			<run>
+				<include name="Smoke Test"/>
+			</run>
+		</groups>
+		<classes>
+			<class name="com.calculatetripcost.testcases.CruisesPageTestAndDeckPageTest" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
