@@ -41,7 +41,7 @@ public class BaseClass extends Browser
 			
 			logger.log(Status.INFO, "Opening the url");
 			
-			driver.get(prop.getProperty("url"));
+			driver.get(property().getProperty("url"));
 			
 			reportPass("Successfully Opened the url");
 			driver.manage().window().maximize();
