@@ -40,10 +40,13 @@ public class CruisesPage extends BaseClass
 			logger.log(Status.INFO,"Cruise Line should be clicked to select Cruise Line from the list of options given in drop down");
 			cruises_line.click();
 			reportPass("Cruise Line is clicked");
+			RunScriptWriteExcel.write(21,6,"Pass");
+			takeScreenshot("Cruise Line DropDown Displayed");
 		}
 		catch(Exception e)
 		{
 			reportFail(e.getMessage());
+			RunScriptWriteExcel.write(21,6,"Fail");
 		}
 	}
 	
@@ -66,6 +69,7 @@ public class CruisesPage extends BaseClass
 				}
 			}
 			reportPass("Value from Cruise Line is selected");
+			takeScreenshot("Cruise Line Value Displayed");
 		}
 		catch(Exception e)
 		{
@@ -84,10 +88,13 @@ public class CruisesPage extends BaseClass
 			logger.log(Status.INFO,"Cruise Ship should be enabled and it should be clicked to select Cruise Ship from the list of options given in drop down");
 			cruises_ship.click();
 			reportPass("Cruise Ship is clicked");
+			RunScriptWriteExcel.write(22,6,"Pass");
+			takeScreenshot("Cruise Ship dropdown Displayed");
 		}
 		catch(Exception e)
 		{
 			reportFail(e.getMessage());
+			RunScriptWriteExcel.write(22,6,"Fail");
 		}
 	}
 	
@@ -110,6 +117,7 @@ public class CruisesPage extends BaseClass
 				}
 			}
 			reportPass("Value from Cruise Ship is selected");
+			takeScreenshot("Cruise Ship Value Selected");
 		}
 		catch(Exception e)
 		{
@@ -119,14 +127,6 @@ public class CruisesPage extends BaseClass
 	
 	@FindBy(css="span._2O1ErRJV:nth-child(1) > button")
 	public WebElement searchButton;
-	
-	/*public DeckPage search_button()
-	{
-		WebDriverWait wait=new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.elementToBeClickable(searchButton));
-	    searchButton.click();
-		return PageFactory.initElements(driver, DeckPage.class);
-	}*/
 	
 	//Click Search Button
 	public WebDriver clickSearchButton()
@@ -138,6 +138,8 @@ public class CruisesPage extends BaseClass
 			logger.log(Status.INFO, "Search Button should be enabled and it should be clicked");
 		    searchButton.click();
 		    reportPass("Search Button is enabled and it is clicked");
+		    takeScreenshot("Search Button Enabled");
+		    RunScriptWriteExcel.write(23,6,"Pass");
 		    Thread.sleep(3000);
 		    String parent=driver.getWindowHandle();
 		    Set<String> set=new HashSet<String>();
@@ -162,6 +164,7 @@ public class CruisesPage extends BaseClass
 		catch(Exception e)
 		{
 			reportFail(e.getMessage());
+			RunScriptWriteExcel.write(23,6,"Fail");
 		}
 		return null;
 	}
