@@ -36,6 +36,7 @@ public class DeckPage extends BaseClass
 			//Scroll Down
 			JavascriptExecutor jse=(JavascriptExecutor)driver1;
 			jse.executeScript("window.scrollBy(0,300);");
+			RunScriptWriteExcel.write(24,6,"Pass");
 			Thread.sleep(4000);
 			String[] about_deck=new String[3];
 			System.out.println("Overview");
@@ -49,6 +50,7 @@ public class DeckPage extends BaseClass
 				i++;
 			}
 			System.out.println(" ");
+			RunScriptWriteExcel.write(25,6,"Pass");
 			logger1.log(Status.PASS,"Overview of the Deck is displayed and it is stored in Excel file Cruise_Details.xlsx in Excel_Output_Test_Result folder");
 			return about_deck;
 		}
@@ -56,6 +58,8 @@ public class DeckPage extends BaseClass
 		{
 			logger1.log(Status.FAIL,e.getMessage());
 			Assert.fail(e.getMessage());
+			RunScriptWriteExcel.write(24,6,"Fail");
+			RunScriptWriteExcel.write(25,6,"Fail");
 		}
 		return null;
 	}
@@ -84,12 +88,14 @@ public class DeckPage extends BaseClass
 			}
 			logger1.log(Status.PASS, "Languages Offered is displayed and stored in Excel file Cruise_Details.xlsx in Excel_Output_Test_Result folder");
 			System.out.println(" ");
+			RunScriptWriteExcel.write(26,6,"Pass");
 			return about_languages;
 		}
 		catch(Exception e)
 		{
 			logger1.log(Status.FAIL,e.getMessage());
 			Assert.fail(e.getMessage());
+			RunScriptWriteExcel.write(26,6,"Fail");
 		}
 		return null;
 	}
