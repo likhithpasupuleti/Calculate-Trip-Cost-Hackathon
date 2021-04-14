@@ -58,14 +58,17 @@ public class BaseClass extends Browser
 		return null;
 	}  
 	
+	public static int j=0;
+	
 	/************************* Reporting Functions ****************************************/
 	public void reportFail(String reportString) 
 	{
 		try 
 		{
 			logger.log(Status.FAIL,reportString);
-			takeScreenshotFailure();
 			Assert.fail(reportString);
+			takeScreenshot("Failure "+j);     			//Take Screenshot with Name Failure 0,Failure 1 etc
+			logger.addScreenCaptureFromPath(System.getProperty("user.dir")+"\\Screenshots\\Failure "+j+".png");   //Add Screenshot to the Extent Report if any of the test fails
 		}
 		catch(Exception e) 
 		{
@@ -86,16 +89,16 @@ public class BaseClass extends Browser
 	}
 	
 	//take screenshot when any of the step did not passed
-	public void takeScreenshotFailure() 
+	public void takeScreenshotFailure(String name) 
 	{
 		try 
 		{
 			TakesScreenshot takeScreenshot=(TakesScreenshot)driver;
 			File src=takeScreenshot.getScreenshotAs(OutputType.FILE);
-			File dest=new File(System.getProperty("user.dir")+"\\Screenshot\\"+TimeStamp.date()+".png");
+			File dest=new File(System.getProperty("user.dir")+"\\Screenshots\\"+name+".png");
 			FileUtils.copyFile(src, dest);
 		
-			logger.addScreenCaptureFromPath(System.getProperty("user.dir")+"\\Screenshot\\"+TimeStamp.date()+".png");
+			logger.addScreenCaptureFromPath(System.getProperty("user.dir")+"\\Screenshots\\"name+".png");
 		}
 	
 		catch(Exception e)
