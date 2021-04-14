@@ -22,6 +22,7 @@ import com.calculatetripcost.pageclasses.DeckPage;
 import com.calculatetripcost.pageclasses.LandingPage;
 import com.calculatetripcost.pageclasses.NairobiSearchResultsPage;
 import com.calculatetripcost.utils.ExtentReportManager;
+import com.calculatetripcost.utils.RunScriptWriteExcel;
 
 
 public class Browser
