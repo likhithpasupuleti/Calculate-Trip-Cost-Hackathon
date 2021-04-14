@@ -16,7 +16,7 @@ public class NairobiSearchResultsPageTest extends Browser
 		try
 		{
 			logger = report.createTest("Nairobi Search Results Page Report");
-			invokeBrowser("chrome");
+			invokeBrowser();
 			//remoteBrowser();
 		}
 		catch(Exception e)
