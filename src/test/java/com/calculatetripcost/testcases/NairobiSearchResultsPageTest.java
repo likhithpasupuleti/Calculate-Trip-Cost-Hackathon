@@ -95,19 +95,6 @@ public class NairobiSearchResultsPageTest extends Browser
 	}
 	
 	@Test(priority=6,groups="Regression Test")
-	public void check_out_test()
-	{
-		try
-		{
-			nairobi_Search_Results_Page.click_check_out();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-	}
-	
-	@Test(priority=7,groups="Regression Test")
 	public void select_check_out_date_test()
 	{
 		try
@@ -120,7 +107,7 @@ public class NairobiSearchResultsPageTest extends Browser
 		}
 	}
 	
-	@Test(priority=8,groups={"Regression Test","Smoke Test"})
+	@Test(priority=7,groups={"Regression Test","Smoke Test"})
 	public void ClickGuestsDropDownTest()
 	{
 		try
@@ -133,7 +120,7 @@ public class NairobiSearchResultsPageTest extends Browser
 		}
 	}
 	
-	@Test(priority=9,groups="Regression Test")
+	@Test(priority=8,groups="Regression Test")
 	public void chooseNumberOfGuestsTest()
 	{
 		try
@@ -146,7 +133,7 @@ public class NairobiSearchResultsPageTest extends Browser
 		}
 	}
 	
-	@Test(priority=10,groups="Smoke Test")
+	@Test(priority=9,groups="Smoke Test")
 	public void clickApplyButtonTest()
 	{
 		try
@@ -160,7 +147,7 @@ public class NairobiSearchResultsPageTest extends Browser
 		}
 	}
 	
-	@Test(priority=11,groups="Regression Test")
+	@Test(priority=10,groups="Regression Test")
 	public void clickSortByTest()
 	{
 		try
@@ -173,7 +160,7 @@ public class NairobiSearchResultsPageTest extends Browser
 		}
 	}
 	
-	@Test(priority=12,groups="Regression Test")
+	@Test(priority=11,groups="Regression Test")
 	public void chooseSortBy()
 	{
 		try
@@ -187,7 +174,7 @@ public class NairobiSearchResultsPageTest extends Browser
 		}
 	}
 	
-	@Test(priority=13,groups="Regression Test")
+	@Test(priority=12,groups="Regression Test")
 	public void clickMoreOptionsTest()
 	{
 		try
@@ -200,7 +187,7 @@ public class NairobiSearchResultsPageTest extends Browser
 		}
 	}
 	
-	@Test(priority=14,groups="Regression Test")
+	@Test(priority=13,groups="Regression Test")
 	public void checkElevatorTest()
 	{
 		try
@@ -214,7 +201,7 @@ public class NairobiSearchResultsPageTest extends Browser
 		}
 	}
 	
-	@Test(priority=15,groups="Regression Test")
+	@Test(priority=14,groups="Regression Test")
 	public void writetoExcelTest()        //Displays HolidayHomesNames,ChargesPerNight,TotaCharges on console and also store in Excel file
 	{
 		try
@@ -227,7 +214,7 @@ public class NairobiSearchResultsPageTest extends Browser
 		}
 	}
 	
-	@Test(priority=16,groups={"Regression Test","Smoke Test"})
+	@Test(priority=15,groups={"Regression Test","Smoke Test"})
 	public void clickOnHolidayHomesNameLinksTest()
 	{
 		try
