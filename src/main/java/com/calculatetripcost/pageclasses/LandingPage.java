@@ -41,10 +41,12 @@ public class LandingPage extends BaseClass
 				}
 			}
 			reportPass("Holiday Homes Button Successfully Clicked in Landing Page");
+			RunScriptWriteExcel.write(6,6,"Pass"); 
 		}
 		catch(Exception e)
 		{
 			reportFail(e.getMessage());
+			RunScriptWriteExcel.write(6,6,"Fail");  
 		}
 	}
 	
@@ -62,10 +64,12 @@ public class LandingPage extends BaseClass
 			enter_destination.sendKeys(destination);
 			
 			reportPass("Destination is Entered in location input text box");
+			RunScriptWriteExcel.write(7,6,"Pass");
 		}
 		catch(Exception e)
 		{
 			reportFail(e.getMessage());
+			RunScriptWriteExcel.write(7,6,"Fail");
 		}
 	}
 	
@@ -95,6 +99,7 @@ public class LandingPage extends BaseClass
 			//Navigating to the href that we got from Search Suggestions
 			driver.get(Search_Suggestions.get(temp).getAttribute("href"));
 			reportPass("Destination from the auto suggestion is clicked");
+			RunScriptWriteExcel.write(8,6,"Pass"); 
 			
 			logger.log(Status.INFO, "Page Navigated to Nairobi Results Search Page");
 			NairobiSearchResultsPage nsrp=new NairobiSearchResultsPage(driver,logger);
@@ -106,6 +111,7 @@ public class LandingPage extends BaseClass
 			System.out.println("Search-Suggestions Not available");
 			driver.get("https://www.tripadvisor.in/VacationRentals-g294207-Reviews-Nairobi-Vacation_Rentals.html");
 			reportFail(e.getMessage());
+			RunScriptWriteExcel.write(8,6,"Pass"); 
 		}
 		return null;
 	}
