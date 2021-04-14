@@ -37,10 +37,11 @@ public class Browser
 	public DeckPage deck_page;
 	
 	//Execution of Testcases on local browser
-	public void invokeBrowser(String browserName)
+	public void invokeBrowser()
 	{
 		try
 		{
+			String browserName=property().getProperty("browser");
 			if(browserName.equalsIgnoreCase("Chrome"))
 			{
 				String driverPath = System.getProperty("user.dir") + "\\Drivers\\chromedriver.exe";
@@ -48,6 +49,7 @@ public class Browser
 				driver = new ChromeDriver();
 				
 				logger.log(Status.PASS,"Chrome Browser Successfully Launched");
+				RunScriptWriteExcel.write(3,6,"Pass");
 			}
 			else if(browserName.equalsIgnoreCase("edge"))
 			{
@@ -56,6 +58,7 @@ public class Browser
 				driver = new EdgeDriver();
 				
 				logger.log(Status.PASS,"Edge Browser Successfully Launched");
+				RunScriptWriteExcel.write(4,6,"Pass");
 			}
 			else if(browserName.equalsIgnoreCase("firefox"))
 			{
@@ -76,6 +79,7 @@ public class Browser
 			else
 			{
 				System.out.println("Invalid choice of browser");
+				RunScriptWriteExcel.write(5,6,"Pass");
 			}
 		}
 		catch(Exception e)
@@ -131,5 +135,23 @@ public class Browser
 		{
 			e.printStackTrace();
 		}
+	}
+	
+	//For Property File
+	public Properties property()
+	{
+		try
+		{
+			String filelocation = System.getProperty("user.dir") + "\\ApplicationProperty\\config.properties";
+			File file = new File(filelocation);
+			FileInputStream fileinput = new FileInputStream(file);
+			prop.load(fileinput);
+			return prop;
+		}
+		catch(Exception e) 
+		{
+			e.printStackTrace();
+		}
+		return null;
 	}
 }
