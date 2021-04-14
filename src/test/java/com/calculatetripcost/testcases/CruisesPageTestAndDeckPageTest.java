@@ -14,7 +14,7 @@ public class CruisesPageTestAndDeckPageTest extends Browser
 		try
 		{
 			logger = report.createTest("Cruises Page and Deck Page Report");
-			invokeBrowser("chrome");
+			invokeBrowser();
 			//remoteBrowser();
 		}
 		catch(Exception e)
