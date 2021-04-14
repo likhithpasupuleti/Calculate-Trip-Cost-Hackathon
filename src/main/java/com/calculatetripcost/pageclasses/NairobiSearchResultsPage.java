@@ -46,10 +46,14 @@ public class NairobiSearchResultsPage extends BaseClass
 			logger.log(Status.INFO, "Check-in Calendar should be clicked");
 			check_in.click();
 			reportPass("Check-in Calendar is clicked");
+			
+			takeScreenshot("Check-in Calendar Displayed");
+			RunScriptWriteExcel.write(9,6,"Pass"); 
 		}
 		catch(Exception e)
 		{
 			reportFail(e.getMessage());
+			RunScriptWriteExcel.write(9,6,"Fail"); 
 		}
 	}
 	
@@ -85,10 +89,13 @@ public class NairobiSearchResultsPage extends BaseClass
 				}
 			}
 			reportPass("Check-in calendar is displayed and Tomorrow Date is selected");
+			takeScreenshot("Date Selected in Check-in Calendar");
+			RunScriptWriteExcel.write(10,6,"Pass");
 		}
 		catch(Exception e)
 		{
 			reportFail(e.getMessage());
+			RunScriptWriteExcel.write(10,6,"Fail");
 		}
 	}
 	
@@ -120,10 +127,15 @@ public class NairobiSearchResultsPage extends BaseClass
 				}
 			}
 			reportPass("Check-out calendar is displayed and fifth day from tomorrow is selected");
+			takeScreenshot("Date selected in Check-out calendar");
+			RunScriptWriteExcel.write(11,6,"Pass"); 
+			RunScriptWriteExcel.write(12,6,"Pass");
 		}
 		catch(Exception e)
 		{
 			reportFail(e.getMessage());
+			RunScriptWriteExcel.write(11,6,"Fail"); 
+			RunScriptWriteExcel.write(12,6,"Fail");
 		}
 	}
 	
@@ -141,10 +153,14 @@ public class NairobiSearchResultsPage extends BaseClass
 			logger.log(Status.INFO, "Guests filter should be clicked to select number of guests");
 			click_guests.click();
 			reportPass("Guests filter is clicked to select number of guests");
+			
+			takeScreenshot("Guests filter Displayed");
+			RunScriptWriteExcel.write(13,6,"Pass");
 		}
 		catch(Exception e)
 		{
 			reportFail(e.getMessage());
+			RunScriptWriteExcel.write(13,6,"Fail");
 		}
 	}
 	
@@ -222,10 +238,12 @@ public class NairobiSearchResultsPage extends BaseClass
 			logger.log(Status.INFO, "Apply button should be clicked");
 			applyButton.click();
 			logger.log(Status.PASS,"Apply button is clicked");
+			RunScriptWriteExcel.write(14,6,"Pass"); 
 		}
 		catch(Exception e)
 		{
 			reportFail(e.getMessage());
+			RunScriptWriteExcel.write(14,6,"Fail")
 		}
 	}
 	
@@ -242,10 +260,14 @@ public class NairobiSearchResultsPage extends BaseClass
 			logger.log(Status.INFO, "Sort By should be clicked to select Traveller Rating option");
 			clickSortBy.click();
 			reportPass("Sort By is clicked");
+			
+			takeScreenshot("Sort By Displayed");
+			RunScriptWriteExcel.write(15,6,"Pass"); 
 		}
 		catch(Exception e)
 		{
 			reportFail(e.getMessage());
+			RunScriptWriteExcel.write(15,6,"Fail"); 
 		}
 	}
 	
@@ -267,10 +289,13 @@ public class NairobiSearchResultsPage extends BaseClass
 				}
 			}
 			reportPass("In Sort By Traveller Rating is selected");
+			RunScriptWriteExcel.write(16,6,"Pass"); 
+			takeScreenshot("Traveller Rating Selected");
 		}
 		catch(Exception e)
 		{
 			reportFail(e.getMessage());
+			RunScriptWriteExcel.write(16,6,"Fail"); 
 		}
 	}
 	
@@ -319,10 +344,13 @@ public class NairobiSearchResultsPage extends BaseClass
 			reportPass("Elevator/Lift Access filter is checked");
 			JavascriptExecutor jse=(JavascriptExecutor)driver;
 			jse.executeScript("window.scrollBy(0,-1000);");        //Scrollup
+			RunScriptWriteExcel.write(17,6,"Pass"); 
+			takeScreenshot("Results Displayed According to Filters");
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
+			RunScriptWriteExcel.write(17,6,"Fail"); 
 		}
 	}
 		
@@ -455,10 +483,14 @@ public class NairobiSearchResultsPage extends BaseClass
 			JavascriptExecutor jse=(JavascriptExecutor)driver;
 			jse.executeScript("window.scrollBy(0,-600)", " ");    //Scroll Up
 			logger.log(Status.PASS, "Page scrolled up to click Cruises Link Text");
+			RunScriptWriteExcel.write(18,6,"Pass");    //Pass Clicking on Holiday Home
+			RunScriptWriteExcel.write(19,6,"Pass");
 		}
 		catch(Exception e)
 		{
 			reportFail(e.getMessage());
+			RunScriptWriteExcel.write(18,6,"Fail");     //Fail Clicking on Holiday Home
+			RunScriptWriteExcel.write(19,6,"Fail"); 	//Fail Navigating Back
 		}
 	}
 	
@@ -480,10 +512,12 @@ public class NairobiSearchResultsPage extends BaseClass
 				}
 			}
 			reportPass("Cruises Link Text is clicked");
+			RunScriptWriteExcel.write(20,6,"Pass");
 		}
 		catch(Exception e)
 		{
 			reportFail(e.getMessage());
+			RunScriptWriteExcel.write(20,6,"Fail");
 		}
 		CruisesPage cp=new CruisesPage(driver,logger);
 		PageFactory.initElements(driver,cp);
