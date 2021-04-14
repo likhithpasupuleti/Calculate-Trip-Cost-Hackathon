@@ -97,8 +97,6 @@ public class BaseClass extends Browser
 			File src=takeScreenshot.getScreenshotAs(OutputType.FILE);
 			File dest=new File(System.getProperty("user.dir")+"\\Screenshots\\"+name+".png");
 			FileUtils.copyFile(src, dest);
-		
-			logger.addScreenCaptureFromPath(System.getProperty("user.dir")+"\\Screenshots\\"name+".png");
 		}
 	
 		catch(Exception e)
