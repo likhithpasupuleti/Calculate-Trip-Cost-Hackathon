@@ -90,7 +90,7 @@ public class BaseClass extends Browser
 	}
 	
 	//take screenshot when any of the step did not passed
-	public void takeScreenshotFailure(String name) 
+	public void takeScreenshot(String name) 
 	{
 		try 
 		{
