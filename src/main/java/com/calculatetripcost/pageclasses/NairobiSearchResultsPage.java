@@ -243,7 +243,7 @@ public class NairobiSearchResultsPage extends BaseClass
 		catch(Exception e)
 		{
 			reportFail(e.getMessage());
-			RunScriptWriteExcel.write(14,6,"Fail")
+			RunScriptWriteExcel.write(14,6,"Fail");
 		}
 	}
 	
