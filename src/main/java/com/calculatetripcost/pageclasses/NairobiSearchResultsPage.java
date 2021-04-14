@@ -239,6 +239,7 @@ public class NairobiSearchResultsPage extends BaseClass
 			applyButton.click();
 			logger.log(Status.PASS,"Apply button is clicked");
 			RunScriptWriteExcel.write(14,6,"Pass"); 
+			waitFor(3);
 		}
 		catch(Exception e)
 		{
