@@ -92,23 +92,6 @@ public class NairobiSearchResultsPage extends BaseClass
 		}
 	}
 	
-	@FindBy(xpath="//div[@class='_1rZK5NGr']")						//Check-Out
-	public WebElement check_out;
-	
-	public void click_check_out()
-	{
-		try
-		{
-			logger.log(Status.INFO, "Check-out Calendar should be clicked");
-			check_out.click();
-			reportPass("Check-out Calendar is clicked");
-		}
-		catch(Exception e)
-		{
-			reportFail(e.getMessage());
-		}
-	}
-	
 	//Choose date from Check-out calendar
 	public void choose_checkout_date()
 	{
